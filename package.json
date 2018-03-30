@@ -1,0 +1,73 @@
+{
+  "name": "protype.js",
+  "version": "0.0.1",
+  "description": "A new kind of object oriented front-end JS framework",
+  "main": "dist/protype.min.js",
+  "scripts": {
+    "run": "npm test",
+    "build": "npm test",
+    "test": "npm run gulp && npm run prettier && npm run lint && npm run eye && exit 0",
+    "gulp": "gulp",
+    "prettier": "prettier \"dist/**/*.js\" --write",
+    "lint": "./node_modules/.bin/eslint \"dist/**/*\" --fix",
+    "eye": "./node_modules/.bin/eye"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arguiot/Protype.git"
+  },
+  "keywords": [
+    "js",
+    "framework",
+    "protype",
+    "class",
+    "frontend",
+    "browser"
+  ],
+  "author": "Arthur Guiot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arguiot/Protype/issues"
+  },
+  "homepage": "https://github.com/arguiot/Protype#readme",
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "babel-helper-flip-expressions": "^0.3.0",
+    "babel-plugin-minify-builtins": "^0.3.0",
+    "babel-plugin-minify-constant-folding": "^0.3.0",
+    "babel-plugin-minify-dead-code-elimination": "^0.3.0",
+    "babel-plugin-minify-flip-comparisons": "^0.3.0",
+    "babel-plugin-minify-guarded-expressions": "^0.3.0",
+    "babel-plugin-minify-infinity": "^0.3.0",
+    "babel-plugin-minify-mangle-names": "^0.3.0",
+    "babel-plugin-minify-replace": "^0.3.0",
+    "babel-plugin-minify-simplify": "^0.3.0",
+    "babel-plugin-minify-type-constructors": "^0.3.0",
+    "babel-plugin-transform-inline-consecutive-adds": "^0.3.0",
+    "babel-plugin-transform-member-expression-literals": "^6.9.0",
+    "babel-plugin-transform-merge-sibling-variables": "^6.9.0",
+    "babel-plugin-transform-minify-booleans": "^6.9.0",
+    "babel-plugin-transform-property-literals": "^6.9.0",
+    "babel-plugin-transform-remove-console": "^6.9.0",
+    "babel-plugin-transform-remove-debugger": "^6.9.0",
+    "babel-plugin-transform-remove-undefined": "^0.3.0",
+    "babel-plugin-transform-simplify-comparison-operators": "^6.9.0",
+    "babel-plugin-transform-undefined-to-void": "^6.9.0",
+    "babel-preset-babili": "^0.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babili": "^0.1.4",
+    "buffer-shims": "^1.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eye.js": "1.1.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-babili": "^0.1.4",
+    "gulp-inject-version": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-rigger": "^0.5.8",
+    "gulp-uglify": "^3.0.0",
+    "prettier": "1.11.1"
+  }
+}
