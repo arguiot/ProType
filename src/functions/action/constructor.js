@@ -1,0 +1,3 @@
+constructor() {
+	this._addEventListener()
+}

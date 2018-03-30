@@ -7,10 +7,38 @@
 ******************************************************/
 class ProType {
 	get Action() {
-		
+		class Action {
+			_addEventListener() {
+				
+			}
+			constructor() {
+				this._addEventListener()
+			}
+		}
+		return Action;
 	}
 	constructor() {
 		this.version = "v0.0.1" // ProType version
+	
+		this.classes = []
+	}
+	get Element() {
+		class Element {
+			constructor() {
+				if (!this.el) {
+					throw "[ProType - Element]: Missing element 'this.el' in the child class."
+				} else {
+					this.el.innerHTML = this.render()
+				}
+			}
+			render() {
+				return 0;
+			}
+		}
+		return Element;
+	}
+	load() {
+		this.classes.push(...arguments)
 	}
 }
 // Browserify / Node.js
