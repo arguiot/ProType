@@ -40,6 +40,11 @@ class ProType {
 	load() {
 		this.classes.push(...arguments)
 	}
+	register(name, Class, opt={}) {
+		if (customElements) {
+			customElements.define(name, Class, opt)
+		}
+	}
 }
 // Browserify / Node.js
 if (typeof define === "function" && define.amd) {
