@@ -40,6 +40,11 @@ class ProType {
 	load() {
 		this.classes.push(...arguments)
 	}
+	prepare(callback) {
+		document.addEventListener("DOMContentLoaded", e => {
+			callback(...this.classes, e)
+		})
+	}
 	register(name, Class, opt={}) {
 		if (customElements) {
 			customElements.define(name, Class, opt)
