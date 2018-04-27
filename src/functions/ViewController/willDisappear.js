@@ -1,0 +1,3 @@
+willDisappear() {
+	// perform UI changes
+}

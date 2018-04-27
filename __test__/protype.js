@@ -6,48 +6,43 @@
 
 ******************************************************/
 class ProType {
-	get Action() {
-		class Action {
-			_addEventListener() {
+	get ViewController() {
+		class view {
+			constructor(el, viewsName, views) {
+				this.view = el
+				this.views = views
+				this.viewsName = viewsName
+			}
+			performTransition(to, animation = "none", sender = "Any") {
 				
 			}
-			constructor() {
-				this._addEventListener()
+			willDisappear() {
+				// perform UI changes
+			}
+			willShow(sender = "Main") {
+				// perform UI changes on load.
 			}
 		}
-		return Action;
+		return view
+	}
+	autoInject() {
+		const els = document.querySelectorAll("[protype]")
+		this.views.push(...els)
+		for (var i = 0; i < els.length; i++) {
+			this.viewsName.push(els[i].getAttribute("protype"))
+		}
 	}
 	constructor() {
-		this.version = "v0.0.1" // ProType version
+		this.version = "v0.0.2" // ProType version
 	
-		this.classes = []
+		this.views = []
+		this.viewsName = []
 	}
-	get Element() {
-		class Element {
-			constructor() {
-				if (!this.el) {
-					throw "[ProType - Element]: Missing element 'this.el' in the child class."
-				} else {
-					this.el.innerHTML = this.render()
-				}
-			}
-			render() {
-				return 0;
-			}
-		}
-		return Element;
-	}
-	load() {
-		this.classes.push(...arguments)
-	}
-	prepare(callback) {
-		document.addEventListener("DOMContentLoaded", e => {
-			callback(...this.classes, e)
-		})
-	}
-	register(name, Class, opt={}) {
-		if (customElements) {
-			customElements.define(name, Class, opt)
+	inject() {
+		const args = [...arguments]
+		for (var i = 0; i < args.length; i++) {
+			this.views.push(args[i][1])
+			this.viewsName.push(args[i][0])
 		}
 	}
 }
