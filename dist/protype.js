@@ -13,8 +13,17 @@ class ProType {
 				this.views = views
 				this.viewsName = viewsName
 			}
-			performTransition(to, animation = "none", sender = "Any") {
-				
+			performTransition(to, animation = "none", animTime = "1s", sender = "Any") {
+				const index = this.viewsName.indexOf(to)
+				const view = this.views[index]
+				view.style["z-index"] = "-10"
+				view.style.display = "block"
+				this.view.style.animation = `${animation} ${animTime} forwards`;
+				this.view.addEventListener("animationend", e => {
+					view.style["z-index"] = "0"
+					this.view.style.display = "none"
+					this.willDisappear()
+				})
 			}
 			willDisappear() {
 				// perform UI changes
@@ -44,6 +53,20 @@ class ProType {
 			this.views.push(args[i][1])
 			this.viewsName.push(args[i][0])
 		}
+	}
+	mount(Class, el) {
+		const classObj = new Class(el, this.viewsName, this.views)
+		return classObj
+	}
+	set(name) {
+		for (var i = 0; i < this.views.length; i++) {
+			if (this.viewsName[i] == name) {
+				this.views[i].style.display = "block"
+			} else {
+				this.views[i].style.display = "none"
+			}
+		}
+	
 	}
 }
 // Browserify / Node.js

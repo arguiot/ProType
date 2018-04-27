@@ -1,0 +1,60 @@
+<head>
+	<style>
+		.controller {
+			width: 100vw;
+			height: 100vh;
+			position: absolute;
+			top: 0;
+		}
+		.one {
+			background: blue
+		}
+		.two {
+			background: red
+		}
+
+		@keyframes test {
+			from {
+				transform: translateX(0);
+			}
+			to {
+				transform: translateX(-100vw);
+			}
+		}
+	</style>
+</head>
+<body>
+
+	<div class="controller one" protype="1">
+
+	</div>
+	<div class="controller two" protype="2">
+
+	</div>
+	<script src="/eyejs/" charset="utf-8"></script>
+	<script src="/static/protype.js"></script>
+	<script>
+		const P = new ProType()
+		P.autoInject()
+
+		class ControllerOne extends P.ViewController {
+			constructor(el, viewsName, views) {
+				super(...arguments)
+				this.view = document.querySelector(".one")
+				this.views = views
+				this.viewsName = viewsName
+
+				this.willShow()
+			}
+			willShow() {
+				this.view.addEventListener("click", e => {
+					super.performTransition("2", "test")
+				})
+			}
+		}
+
+		const one = P.mount(ControllerOne)
+
+		P.set("1")
+	</script>
+</body>
