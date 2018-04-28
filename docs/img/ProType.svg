@@ -1,0 +1,27 @@
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" fill="none">
+<g id="ProType" clip-path="url(#clip0)">
+<g id="Rectangle">
+<rect width="800" height="800" transform="translate(100 100)" fill="black"/>
+<rect x="-50" y="-50" width="900" height="900" stroke-width="100" transform="translate(100 100)" stroke="url(#paint0_linear)"/>
+</g>
+<g id="PT.">
+<path d="M 281.191 143.6C 291.591 143.6 301.324 145.6 310.391 149.6C 319.457 153.333 327.191 158.533 333.591 165.2C 340.257 171.867 345.457 179.733 349.191 188.8C 353.191 197.867 355.191 207.467 355.191 217.6L 355.191 229.6C 355.191 239.733 353.191 249.333 349.191 258.4C 345.457 267.2 340.257 275.067 333.591 282C 327.191 288.667 319.457 293.867 310.391 297.6C 301.324 301.333 291.591 303.2 281.191 303.2L 212.391 303.2L 212.391 416L 164.391 416L 164.391 143.6L 281.191 143.6ZM 212.391 191.2L 212.391 255.6L 273.191 255.6C 284.657 255.6 293.057 252.8 298.391 247.2C 303.724 241.6 306.391 233.733 306.391 223.6C 306.391 214 303.724 206.267 298.391 200.4C 293.057 194.267 284.657 191.2 273.191 191.2L 212.391 191.2ZM 443.988 194L 374.387 194L 374.387 143.6L 563.188 143.6L 563.188 194L 492.788 194L 492.788 416L 443.988 416L 443.988 194ZM 588.331 425.2L 588.331 379.2L 635.931 379.2L 635.931 425.2L 588.331 425.2Z" transform="translate(100 209)" fill="white"/>
+</g>
+</g>
+</g>
+<defs>
+
+<linearGradient id="paint0_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 800 -800 0 800 0)">
+<stop stop-color="#EB5757"/>
+<stop offset="0.507144" stop-color="#F2C94C"/>
+<stop offset="0.994475" stop-color="#F2994A"/>
+</linearGradient>
+
+<clipPath id="clip0">
+<rect width="1000" height="1000" fill="white"/>
+</clipPath>
+
+</defs>
+</svg>
+

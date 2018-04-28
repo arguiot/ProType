@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>{{page.title}}</title>
+	<meta name="description" content="{{page.description}}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="apple-touch-icon" href="icon.png">
+
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="https://unpkg.com/normalize.css">
+	<link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+	<!--[if lte IE 9]
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/?locale=en">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+	{{content}}
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXX-Y"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-XXXXXXX-Y');
+	</script>
+	<script src="/js/functions.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r80/three.min.js" charset="utf-8"></script>
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/bas.min.1.1.3.js"></script>
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/three_post.js"></script>
+	<script src="https://cdn.rawgit.com/mrdoob/three.js/dev/examples/js/controls/OrbitControls.js"></script>
+	<script src="https://cdn.rawgit.com/mrdoob/three.js/dev/examples/js/shaders/LuminosityHighPassShader.js"></script>
+	<script src="https://cdn.rawgit.com/mrdoob/three.js/dev/examples/js/postprocessing/UnrealBloomPass.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+	<script src="/js/webgl.js" charset="utf-8"></script>
+</body>
+
+</html>

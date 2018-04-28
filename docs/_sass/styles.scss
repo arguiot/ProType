@@ -1,0 +1,198 @@
+// Your website's CSS
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "myriad-pro", sans-serif;
+	font-weight: 400;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	// background: #000;
+	font-family: -apple-system, BlinkMacSystemFont, "myriad-pro", sans-serif;
+	font-weight: 400;
+	text-align: center;
+
+	* {
+		text-shadow: 0 0 20px rgba(0, 0, 0, .5);
+	}
+
+	.logo {
+		background: url("/img/ProType.svg");
+		background-size: cover;
+		width: 200px;
+		height: 200px;
+	}
+
+	h1,
+	h2 {
+		color: #e7e7e7;
+	}
+
+	p {
+		color: white;
+	}
+
+	#three-container {
+		position: absolute;
+		top: 0;
+		z-index: -10;
+	}
+}
+@media (max-width: 800px) {
+	header {
+		.logo {
+			width: 100px;
+			height: 100px;
+		}
+
+		h1 {
+			font-size: 60px;
+		}
+
+		h2 {
+			font-size: 30px;
+		}
+	}
+}
+
+h1 {
+	font-size: 73px;
+	font-weight: 600;
+	line-height: 88px;
+	letter-spacing: -0.002em;
+}
+
+h2 {
+	margin-top: -24px;
+	font-size: 44px;
+	font-weight: 400;
+	line-height: 53px;
+	letter-spacing: -0.0275em;
+}
+
+p {
+	font-size: 20px;
+	font-weight: 400;
+	color: #333333;
+	line-height: 32px;
+	letter-spacing: 0.002em;
+}
+
+article {
+	width: 960px;
+	max-width: 80%;
+	margin: 0 auto;
+
+	h1 {
+		text-align: center;
+	}
+
+	.install {
+		.gist-meta {
+			display: none;
+		}
+
+		.gist-data,
+		table.highlight {
+			background: transparent;
+			border: none;
+		}
+
+		.gist-file {
+			border: none;
+		}
+	}
+}
+/* TERMINAL - Installation */
+.install {
+	flex-direction: column;
+}
+
+.window {
+	width: 80%;
+	margin: 0 auto 2rem;
+	box-shadow: 0 0.25rem 0.5rem #292929;
+	border-radius: 0 0 0.1rem 0.1rem;
+	color: white;
+}
+
+.bar {
+	background: #191919;
+	height: 36px;
+	border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.btn,
+.btn::after,
+.btn::before {
+	width: 12px;
+	height: 12px;
+	border-radius: 100%;
+	display: block;
+}
+
+.btn {
+	background: #f6b73e;
+	position: relative;
+	margin-left: 38px;
+	top: 12px;
+}
+
+.btn::after,
+.btn::before {
+	content: " ";
+	position: absolute;
+}
+
+.btn::before {
+	background: #f55551;
+	margin-left: -20px;
+}
+
+.btn::after {
+	background: #32c146;
+	margin-left: 20px;
+}
+
+.body {
+	height: 5rem;
+	// background: #232323;
+	background: #fff;
+	padding: 18px;
+}
+
+.body pre {
+	margin: 0;
+}
+
+.body .pulse {
+	-webkit-animation: pulse 1s ease-in-out infinite;
+	-moz-animation: pulse 1s ease-in-out infinite;
+	animation: pulse 1s ease-in-out infinite;
+}
+@keyframes pulse {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+.command {
+	color: #32c146;
+}
+
+.comment {
+	opacity: 0.5;
+}
