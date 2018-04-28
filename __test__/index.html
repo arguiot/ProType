@@ -1,5 +1,9 @@
 <head>
 	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
 		.controller {
 			width: 100vw;
 			height: 100vh;
@@ -40,20 +44,30 @@
 		class ControllerOne extends P.ViewController {
 			constructor(el, viewsName, views) {
 				super(...arguments)
-				this.view = document.querySelector(".one")
-				this.views = views
-				this.viewsName = viewsName
 
 				this.willShow()
 			}
 			willShow() {
 				this.view.addEventListener("click", e => {
-					super.performTransition("2", "test")
+					super.performTransition("2", "test", "500ms")
 				})
 			}
 		}
 
-		const one = P.mount(ControllerOne)
+		class ControllerTwo extends P.ViewController {
+			constructor(el, viewsName, views) {
+				super(...arguments)
+
+				this.willShow()
+			}
+			willShow() {
+				this.view.addEventListener("click", e => {
+					super.performTransition("1", "test", "500ms")
+				})
+			}
+		}
+		const one = P.mount(ControllerOne, document.querySelector(".one"))
+		const two = P.mount(ControllerTwo, document.querySelector(".two"))
 
 		P.set("1")
 	</script>
