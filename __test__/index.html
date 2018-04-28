@@ -30,45 +30,45 @@
 <body>
 
 	<div class="controller one" protype="1">
-
+		<div class="text"></div>
 	</div>
 	<div class="controller two" protype="2">
-
+		<div class="text"></div>
 	</div>
 	<script src="/eyejs/" charset="utf-8"></script>
 	<script src="/static/protype.js"></script>
 	<script>
 		const P = new ProType()
-		P.autoInject()
 
 		class ControllerOne extends P.ViewController {
 			constructor(el, viewsName, views) {
 				super(...arguments)
-
+				this.name = this.viewsName[this.views.indexOf(this.view)]
 				this.willShow()
 			}
 			willShow() {
 				this.view.addEventListener("click", e => {
-					super.performTransition("2", "test", "500ms")
+					P.performTransition(this.name, "2", "test", "500ms")
 				})
+
+				this.view.querySelector(".text").innerHTML = new Date()
 			}
 		}
 
 		class ControllerTwo extends P.ViewController {
 			constructor(el, viewsName, views) {
 				super(...arguments)
-
-				this.willShow()
+				this.name = this.viewsName[this.views.indexOf(this.view)]
 			}
 			willShow() {
 				this.view.addEventListener("click", e => {
-					super.performTransition("1", "test", "500ms")
+					P.performTransition(this.name, "1", "test", "500ms")
 				})
+
+				this.view.querySelector(".text").innerHTML = "Hello World!"
 			}
 		}
-		const one = P.mount(ControllerOne, document.querySelector(".one"))
-		const two = P.mount(ControllerTwo, document.querySelector(".two"))
-
+		P.autoMount(ControllerOne, ControllerTwo)
 		P.set("1")
 	</script>
 </body>

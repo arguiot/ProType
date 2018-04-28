@@ -3,4 +3,6 @@ constructor() {
 
 	this.views = []
 	this.viewsName = []
+
+	this.controllers = []
 }
