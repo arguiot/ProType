@@ -3,6 +3,8 @@
 body {
 	font-family: -apple-system, BlinkMacSystemFont, "myriad-pro", sans-serif;
 	font-weight: 400;
+	padding: 0;
+	margin: 0;
 }
 
 header {
@@ -10,7 +12,6 @@ header {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 100vw;
 	height: 100vh;
 	// background: #000;
 	font-family: -apple-system, BlinkMacSystemFont, "myriad-pro", sans-serif;
@@ -38,7 +39,7 @@ header {
 	}
 
 	#three-container {
-		position: absolute;
+		position: fixed;
 		top: 0;
 		z-index: -10;
 	}
@@ -82,32 +83,52 @@ p {
 	line-height: 32px;
 	letter-spacing: 0.002em;
 }
-
-article {
-	width: 960px;
-	max-width: 80%;
-	margin: 0 auto;
-
-	h1 {
-		text-align: center;
+a {
+	color: inherit;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
 	}
+}
 
-	.install {
-		.gist-meta {
-			display: none;
+// Article
+.container {
+	transform: skewY(-10deg);
+	background: white;
+	box-sizing: border-box;
+	margin-top: 150px;
+	padding: 100px;
+	article {
+		transform: skewY(10deg);
+		width: 960px;
+		max-width: 80%;
+		margin: 0 auto;
+		&:before {
+			content: '';
+
+		}
+		h1 {
+			text-align: center;
 		}
 
-		.gist-data,
-		table.highlight {
-			background: transparent;
-			border: none;
-		}
+		.install {
+			.gist-meta {
+				display: none;
+			}
 
-		.gist-file {
-			border: none;
+			.gist-data,
+			table.highlight {
+				background: transparent;
+				border: none;
+			}
+
+			.gist-file {
+				border: none;
+			}
 		}
 	}
 }
+
 /* TERMINAL - Installation */
 .install {
 	flex-direction: column;
@@ -127,36 +148,40 @@ article {
 	border-radius: 0.5rem 0.5rem 0 0;
 }
 
-.btn,
-.btn::after,
-.btn::before {
+.btn {
 	width: 12px;
 	height: 12px;
 	border-radius: 100%;
 	display: block;
-}
 
-.btn {
+	&::after,
+	&::before {
+		width: 12px;
+		height: 12px;
+		border-radius: 100%;
+		display: block;
+	}
 	background: #f6b73e;
 	position: relative;
 	margin-left: 38px;
 	top: 12px;
-}
 
-.btn::after,
-.btn::before {
-	content: " ";
-	position: absolute;
-}
+	&::after {
+		content: " ";
+		position: absolute;
+	}
 
-.btn::before {
-	background: #f55551;
-	margin-left: -20px;
-}
+	&::before {
+		content: " ";
+		position: absolute;
+		background: #f55551;
+		margin-left: -20px;
+	}
 
-.btn::after {
-	background: #32c146;
-	margin-left: 20px;
+	&::after {
+		background: #32c146;
+		margin-left: 20px;
+	}
 }
 
 .body {
@@ -164,16 +189,16 @@ article {
 	// background: #232323;
 	background: #fff;
 	padding: 18px;
-}
 
-.body pre {
-	margin: 0;
-}
+	pre {
+		margin: 0;
+	}
 
-.body .pulse {
-	-webkit-animation: pulse 1s ease-in-out infinite;
-	-moz-animation: pulse 1s ease-in-out infinite;
-	animation: pulse 1s ease-in-out infinite;
+	.pulse {
+		-webkit-animation: pulse 1s ease-in-out infinite;
+		-moz-animation: pulse 1s ease-in-out infinite;
+		animation: pulse 1s ease-in-out infinite;
+	}
 }
 @keyframes pulse {
 	0% {
@@ -195,4 +220,21 @@ article {
 
 .comment {
 	opacity: 0.5;
+}
+
+
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 300px;
+	p {
+		color: white;
+		text-shadow: 0 0 20px rgba(0, 0, 0, .5);
+		&.small {
+			font-size: 12px;
+			opacity: .8
+		}
+	}
 }

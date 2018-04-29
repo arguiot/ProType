@@ -39,7 +39,7 @@ class ProType {
 		}
 	}
 	constructor() {
-		this.version = "v0.0.2" // ProType version
+		this.version = "v0.0.3" // ProType version
 	
 		this.views = []
 		this.viewsName = []
@@ -79,15 +79,16 @@ class ProType {
 	    })
 	}
 	set(name) {
-		for (var i = 0; i < this.views.length; i++) {
-			if (this.viewsName[i] == name) {
-				this.views[i].style.display = "block"
-				this.controllers[i].willShow()
-			} else {
-				this.views[i].style.display = "none"
+		document.addEventListener("DOMContentLoaded", e => {
+			for (var i = 0; i < this.views.length; i++) {
+				if (this.viewsName[i] == name) {
+					this.views[i].style.display = "block"
+					this.controllers[i].willShow()
+				} else {
+					this.views[i].style.display = "none"
+				}
 			}
-		}
-	
+		})
 	}
 }
 // Browserify / Node.js
