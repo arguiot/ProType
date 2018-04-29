@@ -6,12 +6,37 @@
 
 ******************************************************/
 class ProType {
+	get Group() {
+		class group {
+			changeHandler(e) {
+			
+			}
+			constructor(el, groupName, viewName) {
+				this.group = el
+				this.groupName = groupName
+				this.viewName = viewName
+			}
+			setState(data) {
+				this.state = data
+				this.changeHandler({
+					object: this.state
+				})
+			}
+		}
+		return group
+	}
 	get ViewController() {
 		class view {
 			constructor(el, viewsName, views) {
 				this.view = el
 				this.views = views
 				this.viewsName = viewsName
+				const index = this.views.indexOf(this.view)
+				this.viewName = this.viewsName[index]
+			}
+			mountGroup(el, ObjectClass) {
+				const obj = ObjectClass(el, el.getAttribute("protype-group"), this.viewName)
+				return obj;
 			}
 			willDisappear() {
 				// perform UI changes
