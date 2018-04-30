@@ -20,11 +20,11 @@ class ProType {
 			init() {
 				
 			}
-			setState(data) {
+			setState(data, handler) {
 				if (JSON.stringify(data) != JSON.stringify(this.state)) {
 					this.state = data
 			
-					this.changeHandler({
+					handler({
 						object: this.state
 					})
 				}
@@ -71,7 +71,7 @@ class ProType {
 		}
 	}
 	constructor() {
-		this.version = "v0.0.4" // ProType version
+		this.version = "v0.0.5" // ProType version
 	
 		this.views = []
 		this.viewsName = []

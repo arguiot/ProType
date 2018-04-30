@@ -1,8 +1,8 @@
-setState(data) {
+setState(data, handler) {
 	if (JSON.stringify(data) != JSON.stringify(this.state)) {
 		this.state = data
 
-		this.changeHandler({
+		handler({
 			object: this.state
 		})
 	}
