@@ -18,15 +18,10 @@ gulp.task("minify-full", () => {
     gulp.src("src/base.js")
         .pipe(rigger())
         .pipe(injectVersion())
-        .pipe(babili({
-            mangle: {
-                keepClassName: true
-            }
-        }))
-
         .pipe(babel({
             presets: ["env"]
         }))
+        .pipe(uglify())
         .pipe(rename({
             basename: "protype",
             suffix: ".min"
