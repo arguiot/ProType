@@ -3,7 +3,7 @@
     <h1>ProType</h1>
     <h2>The next generation JavaScript framework</h2>
 
-	[![GitHub release](https://img.shields.io/github/release/arguiot/ProType.svg)](https://github.com/arguiot/ProType/releases)
+[![GitHub release](https://img.shields.io/github/release/arguiot/ProType.svg)](https://github.com/arguiot/ProType/releases)
 	[![Build Status](https://travis-ci.org/arguiot/ProType.svg?branch=master)](https://travis-ci.org/arguiot/ProType)
 	[![Github All Releases](https://img.shields.io/github/downloads/arguiot/ProType/total.svg)](https://github.com/arguiot/ProType/)
 	[![npm](https://img.shields.io/npm/dt/protype.js.svg)](https://www.npmjs.com/package/protype.js)
