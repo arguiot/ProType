@@ -15,6 +15,10 @@ class ProType {
 				this.group = el
 				this.groupName = groupName
 				this.viewName = viewName
+				this.init()
+			}
+			init() {
+				
 			}
 			setState(data) {
 				if (JSON.stringify(data) != JSON.stringify(this.state)) {
@@ -38,7 +42,7 @@ class ProType {
 				this.viewName = this.viewsName[index]
 			}
 			mountGroup(el, ObjectClass) {
-				const obj = ObjectClass(el, el.getAttribute("protype-group"), this.viewName)
+				const obj = new ObjectClass(el, el.getAttribute("protype-group"), this.viewName)
 				return obj;
 			}
 			willDisappear() {
@@ -67,7 +71,7 @@ class ProType {
 		}
 	}
 	constructor() {
-		this.version = "v0.0.3" // ProType version
+		this.version = "v0.0.4" // ProType version
 	
 		this.views = []
 		this.viewsName = []
