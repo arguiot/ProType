@@ -63,10 +63,10 @@ class ProType {
 			throw "Controllers and Elements don't match"
 		}
 	
-		for (var i = 0; i < els.length; i++) {
+		for (let i = 0; i < els.length; i++) {
 			this.viewsName.push(els[i].getAttribute("protype"))
 		}
-		for (var i = 0; i < controllers.length; i++) { // need to finish register everything
+		for (let i = 0; i < controllers.length; i++) { // need to finish register everything
 			this.controllers.push(new controllers[i](els[i], this.viewsName, this.views))
 		}
 	}
@@ -80,11 +80,11 @@ class ProType {
 	}
 	mount() {
 		const args = [...arguments]
-		for (var i = 0; i < args.length; i++) {
+		for (let i = 0; i < args.length; i++) {
 			this.views.push(args[i][1])
 			this.viewsName.push(args[i][0])
 		}
-		for (var i = 0; i < args.length; i++) {
+		for (let i = 0; i < args.length; i++) {
 			this.controllers.push(new args[i](this.views[i], this.viewsName, this.views))
 		}
 	}

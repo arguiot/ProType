@@ -7,10 +7,10 @@ autoMount() {
 		throw "Controllers and Elements don't match"
 	}
 
-	for (var i = 0; i < els.length; i++) {
+	for (let i = 0; i < els.length; i++) {
 		this.viewsName.push(els[i].getAttribute("protype"))
 	}
-	for (var i = 0; i < controllers.length; i++) { // need to finish register everything
+	for (let i = 0; i < controllers.length; i++) { // need to finish register everything
 		this.controllers.push(new controllers[i](els[i], this.viewsName, this.views))
 	}
 }
