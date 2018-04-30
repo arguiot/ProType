@@ -45,7 +45,7 @@ class ProType {
 				const obj = new ObjectClass(el, el.getAttribute("protype-group"), this.viewName)
 				return obj;
 			}
-			willDisappear() {
+			willDisappear(sender = "Main") {
 				// perform UI changes
 			}
 			willShow(sender = "Main") {
@@ -85,7 +85,7 @@ class ProType {
 			this.viewsName.push(args[i][0])
 		}
 		for (let i = 0; i < args.length; i++) {
-			this.controllers.push(new args[i](this.views[i], this.viewsName, this.views))
+			this.controllers.push(new args[i][2](this.views[i], this.viewsName, this.views))
 		}
 	}
 	performTransition(sender, to, animation = "none", animTime = "1s") {
