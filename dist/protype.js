@@ -15,6 +15,7 @@ class ProType {
 				this.group = el
 				this.groupName = groupName
 				this.viewName = viewName
+				this.state = {}
 				this.init()
 			}
 			init() {
