@@ -72,7 +72,7 @@ class ProType {
 		}
 	}
 	constructor() {
-		this.version = "v0.0.6" // ProType version
+		this.version = "v0.0.7" // ProType version
 	
 		this.views = []
 		this.viewsName = []
@@ -100,7 +100,7 @@ class ProType {
 	
 		view.setAttribute("style", "")
 		view.style["z-index"] = "-10"
-		view.style.display = "block"
+		view.style.display = ""
 		controller.willShow()
 	
 	    senderView.style.animation = `${animation} ${animTime} forwards`;
@@ -115,10 +115,10 @@ class ProType {
 		document.addEventListener("DOMContentLoaded", e => {
 			for (var i = 0; i < this.views.length; i++) {
 				if (this.viewsName[i] == name) {
-					this.views[i].style.visibility = "visible"
+					this.views[i].style.display = ""
 					this.controllers[i].willShow()
 				} else {
-					this.views[i].style.visibility = "hidden"
+					this.views[i].style.display = "none"
 				}
 			}
 		})

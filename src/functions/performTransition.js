@@ -9,7 +9,7 @@ performTransition(sender, to, animation = "none", animTime = "1s") {
 
 	view.setAttribute("style", "")
 	view.style["z-index"] = "-10"
-	view.style.display = "block"
+	view.style.display = ""
 	controller.willShow()
 
     senderView.style.animation = `${animation} ${animTime} forwards`;
