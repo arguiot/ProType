@@ -72,7 +72,7 @@ class ProType {
 		}
 	}
 	constructor() {
-		this.version = "v0.0.7" // ProType version
+		this.version = "v0.0.8" // ProType version
 	
 		this.views = []
 		this.viewsName = []
@@ -100,7 +100,7 @@ class ProType {
 	
 		view.setAttribute("style", "")
 		view.style["z-index"] = "-10"
-		view.style.display = ""
+		view.style.display = "initial"
 		controller.willShow()
 	
 	    senderView.style.animation = `${animation} ${animTime} forwards`;
