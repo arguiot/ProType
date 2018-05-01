@@ -103,6 +103,7 @@ h2 {
 	font-weight: 400;
 	line-height: 53px;
 	letter-spacing: -0.0275em;
+	text-align: center;
 }
 
 p {
@@ -111,6 +112,8 @@ p {
 	color: #333333;
 	line-height: 32px;
 	letter-spacing: 0.002em;
+	box-sizing: border-box;
+	padding: 30px;
 }
 
 a {
