@@ -1,4 +1,5 @@
-performTransition(sender, to, animation = "none", animTime = "1s") {
+performTransition(to, animation = "none", animTime = "1s") {
+	const sender = this.currentView
 	const sendIndex = this.viewsName.indexOf(sender)
 	const senderView = this.views[sendIndex]
 	const senderController = this.controllers[sendIndex]
@@ -7,6 +8,8 @@ performTransition(sender, to, animation = "none", animTime = "1s") {
     const view = this.views[index]
 	const controller = this.controllers[index]
 
+	this.currentView = to;
+	
 	view.setAttribute("style", "")
 	view.style["z-index"] = "-10"
 	view.style.display = "block"

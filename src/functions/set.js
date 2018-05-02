@@ -1,4 +1,5 @@
 set(name) {
+	this.currentView = name;
 	document.addEventListener("DOMContentLoaded", e => {
 		for (var i = 0; i < this.views.length; i++) {
 			if (this.viewsName[i] == name) {

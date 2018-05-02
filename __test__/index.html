@@ -48,7 +48,7 @@
 			}
 			willShow() {
 				this.view.addEventListener("click", e => {
-					P.performTransition(this.name, "2", "test", "500ms")
+					P.performTransition("2", "test", "500ms")
 				})
 
 				this.view.querySelector(".text").innerHTML = new Date()
@@ -62,7 +62,7 @@
 			}
 			willShow() {
 				this.view.addEventListener("click", e => {
-					P.performTransition(this.name, "1", "test", "500ms")
+					P.performTransition("1", "test", "500ms")
 				})
 
 				this.view.querySelector(".text").innerHTML = "Hello World!"

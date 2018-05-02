@@ -5,4 +5,6 @@ constructor() {
 	this.viewsName = []
 
 	this.controllers = []
+
+	this.currentView = "";
 }

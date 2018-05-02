@@ -76,6 +76,8 @@ class ProType {
 		this.viewsName = []
 	
 		this.controllers = []
+	
+		this.currentView = "";
 	}
 	mount() {
 		const args = [...arguments]
@@ -87,7 +89,8 @@ class ProType {
 			this.controllers.push(new args[i][2](this.views[i], this.viewsName, this.views))
 		}
 	}
-	performTransition(sender, to, animation = "none", animTime = "1s") {
+	performTransition(to, animation = "none", animTime = "1s") {
+		const sender = this.currentView
 		const sendIndex = this.viewsName.indexOf(sender)
 		const senderView = this.views[sendIndex]
 		const senderController = this.controllers[sendIndex]
@@ -96,6 +99,8 @@ class ProType {
 	    const view = this.views[index]
 		const controller = this.controllers[index]
 	
+		this.currentView = to;
+		
 		view.setAttribute("style", "")
 		view.style["z-index"] = "-10"
 		view.style.display = "block"
@@ -110,6 +115,7 @@ class ProType {
 	    })
 	}
 	set(name) {
+		this.currentView = name;
 		document.addEventListener("DOMContentLoaded", e => {
 			for (var i = 0; i < this.views.length; i++) {
 				if (this.viewsName[i] == name) {
