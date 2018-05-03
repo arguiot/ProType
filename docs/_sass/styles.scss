@@ -71,24 +71,6 @@ header {
 		transform: translateY(-50%);
 	}
 }
-@media (max-width: 800px) {
-	header {
-		.logo {
-			width: 100px;
-			height: 100px;
-		}
-		.scroll {
-			display: none;
-		}
-	}
-	h1 {
-		font-size: 60px;
-	}
-
-	h2 {
-		font-size: 30px;
-	}
-}
 
 h1 {
 	font-size: 73px;
@@ -130,7 +112,7 @@ a {
 	background: white;
 	box-sizing: border-box;
 	margin-top: 150px;
-	padding: 100px;
+	padding: 100px 0 100px 0;
 
 	article {
 		transform: skewY(10deg);
@@ -297,5 +279,31 @@ footer {
 
 	50% {
 		bottom: 48px
+	}
+}
+
+@media (max-width: 800px) {
+	header {
+		.logo {
+			width: 100px;
+			height: 100px;
+		}
+		.scroll {
+			display: none;
+		}
+	}
+	h1 {
+		font-size: 10vh;
+		text-align: center;
+	}
+
+	h2 {
+		font-size: 5vh;
+		text-align: center;
+	}
+	.container {
+		article {
+
+		}
 	}
 }
