@@ -89,7 +89,12 @@ class ProType {
 			this.controllers.push(new args[i][2](this.views[i], this.viewsName, this.views))
 		}
 	}
-	performTransition(to, animation = "none", animTime = "1s") {
+	performTransition(to, options) {
+		const opt = Object.assign({
+			animation: "none",
+			animTime: "1s",
+			senderGroup: false
+		})
 		const sender = this.currentView
 		const sendIndex = this.viewsName.indexOf(sender)
 		const senderView = this.views[sendIndex]
@@ -100,19 +105,29 @@ class ProType {
 		const controller = this.controllers[index]
 	
 		this.currentView = to;
-		
+	
 		view.setAttribute("style", "")
 		view.style["z-index"] = "-10"
 		view.style.display = "block"
 		controller.willShow()
+		if (opt.senderGroup) {
+			senderGroup.group.style.animation = `${opt.animation} ${opt.animTime} forwards`;
 	
-	    senderView.style.animation = `${animation} ${animTime} forwards`;
+			senderGroup.addEventListener("animationend", e => {
+				view.style["z-index"] = "0"
+		        senderView.style.display = "none"
+		        senderController.willDisappear()
+		    })
+		} else {
+			senderView.style.animation = `${opt.animation} ${opt.animTime} forwards`;
 	
-	    senderView.addEventListener("animationend", e => {
-			view.style["z-index"] = "0"
-	        senderView.style.display = "none"
-	        senderController.willDisappear()
-	    })
+			senderView.addEventListener("animationend", e => {
+				view.style["z-index"] = "0"
+		        senderView.style.display = "none"
+		        senderController.willDisappear()
+		    })
+		}
+	
 	}
 	set(name) {
 		this.currentView = name;
