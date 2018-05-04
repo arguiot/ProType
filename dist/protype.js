@@ -108,17 +108,20 @@ class ProType {
 	
 		view.setAttribute("style", "")
 		view.style["z-index"] = "-10"
-		view.style.display = "block"
+	
 		controller.willShow()
 		if (opt.senderGroup) {
 			senderGroup.group.style.animation = `${opt.animation} ${opt.animTime} forwards`;
 	
 			senderGroup.addEventListener("animationend", e => {
+				view.style.display = "block"
 				view.style["z-index"] = "0"
 		        senderView.style.display = "none"
 		        senderController.willDisappear()
 		    })
 		} else {
+			view.style.display = "block"
+	
 			senderView.style.animation = `${opt.animation} ${opt.animTime} forwards`;
 	
 			senderView.addEventListener("animationend", e => {
