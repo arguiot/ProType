@@ -16,7 +16,7 @@ nav {
 	margin: 0 auto;
 	width: 100%;
 	a {
-		font-size: 20px;
+		font-size: 40px;
 		font-weight: 400;
 		color: white;
 		line-height: 32px;
@@ -24,6 +24,9 @@ nav {
 		width: 200px;
 		text-align: center;
 		text-shadow: 0 0 20px rgba(0, 0, 0, .5);
+		svg {
+			filter: drop-shadow(0, 0, 20px, rgba(0, 0, 0, .5));
+		}
 	}
 }
 header {
