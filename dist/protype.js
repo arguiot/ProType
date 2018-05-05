@@ -115,61 +115,69 @@ class ProType {
 		}
 	}
 	performTransition(to, options) {
-		const opt = Object.assign({
-			animation: "none",
-			animTime: "1s",
-			senderGroup: false
-		})
-		const sender = this.currentView
-		const sendIndex = this.viewsName.indexOf(sender)
-		const senderView = this.views[sendIndex]
-		const senderController = this.controllers[sendIndex]
+	    const opt = Object.assign({
+	        animation: "none",
+	        animTime: "1s",
+	        senderGroup: false
+	    })
+	    const sender = this.currentView
+	    const sendIndex = this.viewsName.indexOf(sender)
+	    const senderView = this.views[sendIndex]
+	    const senderController = this.controllers[sendIndex]
 	
 	    const index = this.viewsName.indexOf(to)
+	    const viewBis = this.views[index].cloneNode(true);
+	    this.views[index].parentNode.replaceChild(viewBis, this.views[index])
+	
+	    this.views[index] = viewBis
+	
 	    const view = this.views[index]
-		const controller = this.controllers[index]
+	    const controller = this.controllers[index]
 	
-		this.currentView = to;
+	    controller.view = view
+	    controller.views = this.views;
 	
-		view.setAttribute("style", "")
-		view.style["z-index"] = "-10"
+	    this.currentView = to;
 	
-		controller.willShow()
+	    view.setAttribute("style", "")
+	    view.style["z-index"] = "-10"
 	
-		if (opt.senderGroup !== false) {
-			function after() {
-				view.style.display = "block"
-				view.style["z-index"] = "0"
-		        senderView.style.display = "none"
-		        senderController.willDisappear()
-		    }
-			if (opt.animation !== "none") {
-				opt.senderGroup.group.style.animation = `${opt.animation} ${opt.animTime} forwards`;
+	    controller.willShow()
 	
-				opt.senderGroup.addEventListener("animationend", e => after())
-			} else {
-				after()
-			}
+	    if (opt.senderGroup !== false) {
+	        function after() {
+	            view.style.display = "block"
+	            view.style["z-index"] = "0"
+	            senderView.style.display = "none"
+	            senderController.willDisappear()
+	        }
+	        if (opt.animation !== "none") {
+	            opt.senderGroup.group.style.animation = `${opt.animation} ${opt.animTime} forwards`;
 	
-		} else {
-			view.style.display = "block"
+	            opt.senderGroup.addEventListener("animationend", e => after())
+	        } else {
+	            after()
+	        }
 	
-			function after() {
-				view.style["z-index"] = "0"
-		        senderView.style.display = "none"
-		        senderController.willDisappear()
-				view.style.display = "block"
-		    }
+	    } else {
+	        view.style.display = "block"
 	
-			if (opt.animation !== "none") {
-				senderView.style.animation = `${opt.animation} ${opt.animTime} forwards`;
+	        function after() {
+	            view.style["z-index"] = "0"
+	            senderView.style.display = "none"
+	            senderController.willDisappear()
+	            view.style.display = "block"
+	        }
 	
-				senderView.addEventListener("animationend", e => after())
-			} else {
-				after()
-			}
+	        if (opt.animation !== "none") {
+	            senderView.style.animation = `${opt.animation} ${opt.animTime} forwards`;
 	
-		}
+	            senderView.addEventListener("animationend", e => after())
+	        } else {
+	            after()
+	        }
+	
+	    }
 	
 	}
 	set(name) {
