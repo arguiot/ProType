@@ -31,6 +31,31 @@ class ProType {
 		}
 		return group
 	}
+	Router(handler) {
+	
+	    document.addEventListener("DOMContentLoaded", e => {
+	        let data = {};
+	
+	        const url = window.location.href
+	        data.url = url
+	        const origin = window.location.origin
+	        data.origin = origin
+	        const path = window.location.pathname
+	        data.path = path
+	        const hash = window.location.hash
+	        data.hash = hash
+	        const search = window.location.search.substring(1).split("&")
+	        let searchObj = {}
+	        for (let i = 0; i < search.length; i++) {
+	            const splitted = search[i].split("=")
+	            searchObj[decodeURIComponent(splitted[0])] = decodeURIComponent(splitted[1])
+	        }
+	        data.search = searchObj
+			data.pathValue = path.split("/")
+	
+	        handler(data)
+	    })
+	}
 	get ViewController() {
 		class view {
 			constructor(el, viewsName, views) {
@@ -110,25 +135,40 @@ class ProType {
 		view.style["z-index"] = "-10"
 	
 		controller.willShow()
-		if (opt.senderGroup) {
-			senderGroup.group.style.animation = `${opt.animation} ${opt.animTime} forwards`;
 	
-			senderGroup.addEventListener("animationend", e => {
+		if (opt.senderGroup !== false) {
+			function after() {
 				view.style.display = "block"
 				view.style["z-index"] = "0"
 		        senderView.style.display = "none"
 		        senderController.willDisappear()
-		    })
+		    }
+			if (opt.animation !== "none") {
+				opt.senderGroup.group.style.animation = `${opt.animation} ${opt.animTime} forwards`;
+	
+				opt.senderGroup.addEventListener("animationend", e => after())
+			} else {
+				after()
+			}
+	
 		} else {
 			view.style.display = "block"
 	
-			senderView.style.animation = `${opt.animation} ${opt.animTime} forwards`;
-	
-			senderView.addEventListener("animationend", e => {
+			function after() {
 				view.style["z-index"] = "0"
 		        senderView.style.display = "none"
 		        senderController.willDisappear()
-		    })
+				view.style.display = "block"
+		    }
+	
+			if (opt.animation !== "none") {
+				senderView.style.animation = `${opt.animation} ${opt.animTime} forwards`;
+	
+				senderView.addEventListener("animationend", e => after())
+			} else {
+				after()
+			}
+	
 		}
 	
 	}

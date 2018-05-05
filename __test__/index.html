@@ -41,37 +41,28 @@
 		const P = new ProType()
 
 		class ControllerOne extends P.ViewController {
-			constructor(el, viewsName, views) {
-				super(...arguments)
-				this.name = this.viewsName[this.views.indexOf(this.view)]
-				this.willShow()
-			}
 			willShow() {
 				this.view.addEventListener("click", e => {
-					P.performTransition("1", {
-						animation: "test",
-						animTime: "500ms"
-					})
+					P.performTransition("2")
 				})
 
 				this.view.querySelector(".text").innerHTML = new Date()
 			}
+			willDisappear() {
+				this.view.removeEventListener("click", e => {})
+			}
 		}
 
 		class ControllerTwo extends P.ViewController {
-			constructor(el, viewsName, views) {
-				super(...arguments)
-				this.name = this.viewsName[this.views.indexOf(this.view)]
-			}
 			willShow() {
 				this.view.addEventListener("click", e => {
-					P.performTransition("1", {
-						animation: "test",
-						animTime: "500ms"
-					})
+					P.performTransition("1")
 				})
 
 				this.view.querySelector(".text").innerHTML = "Hello World!"
+			}
+			willDisappear() {
+				this.view.removeEventListener("click", e => {})
 			}
 		}
 		P.autoMount(ControllerOne, ControllerTwo)
