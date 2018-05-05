@@ -30,6 +30,7 @@
             }
         ],
         "no-unused-vars": "off",
-		"no-cond-assign": "off"
+		"no-cond-assign": "off",
+		"no-inner-declaration": "off"
     }
 }

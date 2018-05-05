@@ -95,7 +95,7 @@ class ProType {
 		}
 	}
 	constructor() {
-		this.version = "v0.0.10" // ProType version
+		this.version = "v0.0.11" // ProType version
 	
 		this.views = []
 		this.viewsName = []
@@ -119,7 +119,8 @@ class ProType {
 	        animation: "none",
 	        animTime: "1s",
 	        senderGroup: false
-	    })
+	    }, options)
+		
 	    const sender = this.currentView
 	    const sendIndex = this.viewsName.indexOf(sender)
 	    const senderView = this.views[sendIndex]
@@ -168,7 +169,6 @@ class ProType {
 	            senderController.willDisappear()
 	            view.style.display = "block"
 	        }
-	
 	        if (opt.animation !== "none") {
 	            senderView.style.animation = `${opt.animation} ${opt.animTime} forwards`;
 	

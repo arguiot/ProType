@@ -43,7 +43,9 @@
 		class ControllerOne extends P.ViewController {
 			willShow() {
 				this.view.addEventListener("click", e => {
-					P.performTransition("2")
+					P.performTransition("2", {
+						animation: "test"
+					})
 				})
 
 				this.view.querySelector(".text").innerHTML = new Date()
@@ -56,7 +58,9 @@
 		class ControllerTwo extends P.ViewController {
 			willShow() {
 				this.view.addEventListener("click", e => {
-					P.performTransition("1")
+					P.performTransition("1", {
+						animation: "test"
+					})
 				})
 
 				this.view.querySelector(".text").innerHTML = "Hello World!"
