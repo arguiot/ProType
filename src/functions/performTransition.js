@@ -1,10 +1,10 @@
 performTransition(to, options) {
     const opt = Object.assign({
         animation: "none",
-        animTime: "1s",
-        senderGroup: false
+        duration: "1s",
+        Group: false
     }, options)
-	
+
     const sender = this.currentView
     const sendIndex = this.viewsName.indexOf(sender)
     const senderView = this.views[sendIndex]
@@ -29,7 +29,7 @@ performTransition(to, options) {
 
     controller.willShow()
 
-    if (opt.senderGroup !== false) {
+    if (opt.Group !== false) {
         function after() {
             view.style.display = "block"
             view.style["z-index"] = "0"
@@ -37,9 +37,9 @@ performTransition(to, options) {
             senderController.willDisappear()
         }
         if (opt.animation !== "none") {
-            opt.senderGroup.group.style.animation = `${opt.animation} ${opt.animTime} forwards`;
+            opt.Group.group.style.animation = `${opt.animation} ${opt.duration} forwards`;
 
-            opt.senderGroup.addEventListener("animationend", e => after())
+            opt.Group.addEventListener("animationend", e => after())
         } else {
             after()
         }
@@ -54,7 +54,7 @@ performTransition(to, options) {
             view.style.display = "block"
         }
         if (opt.animation !== "none") {
-            senderView.style.animation = `${opt.animation} ${opt.animTime} forwards`;
+            senderView.style.animation = `${opt.animation} ${opt.duration} forwards`;
 
             senderView.addEventListener("animationend", e => after())
         } else {
