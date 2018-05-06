@@ -7,6 +7,13 @@ body {
 	margin: 0;
 }
 
+#three-container {
+	background: #000;
+	position: fixed;
+	top: 0;
+	z-index: -10;
+}
+
 nav {
 	display: flex;
 	justify-content: center;
@@ -61,13 +68,6 @@ header {
 
 	p {
 		color: white;
-	}
-
-	#three-container {
-		background: #000;
-		position: fixed;
-		top: 0;
-		z-index: -10;
 	}
 
 	.scroll {
@@ -330,9 +330,9 @@ footer {
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
-	position: absolute;
+	position: fixed;
 	top: 0;
-
+	background: white;
 	.exit {
 		position: fixed;
 		top: 20px;

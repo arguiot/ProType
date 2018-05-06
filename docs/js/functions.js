@@ -16,24 +16,6 @@ class MainViewController extends P.ViewController {
 				animation: "changelog"
 			})
 		})
-
-        root = new THREERoot({
-            createCameraControls: false,
-            antialias: true, //(window.devicePixelRatio === 1),
-            fov: 80,
-            zNear: 0.001,
-            zFar: 2000,
-        });
-
-        root.renderer.setClearColor(new THREE.Color().setHSL(0, 0, 0.05));
-        root.camera.position.set(0, 0.05, 1);
-
-        createTubes();
-        beginTubesSequence();
-    }
-    willDisappear() {
-
-        this.view.querySelector("canvas").remove()
     }
 }
 
