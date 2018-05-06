@@ -15,6 +15,7 @@ nav {
 	top: 30px;
 	margin: 0 auto;
 	width: 100%;
+
 	a {
 		font-size: 40px;
 		font-weight: 400;
@@ -24,11 +25,13 @@ nav {
 		width: 200px;
 		text-align: center;
 		text-shadow: 0 0 20px rgba(0, 0, 0, .5);
+
 		svg {
 			filter: drop-shadow(0, 0, 20px, rgba(0, 0, 0, .5));
 		}
 	}
 }
+
 header {
 	display: flex;
 	flex-direction: column;
@@ -61,6 +64,7 @@ header {
 	}
 
 	#three-container {
+		background: #000;
 		position: fixed;
 		top: 0;
 		z-index: -10;
@@ -110,12 +114,13 @@ a {
 	}
 }
 // Article
+
 .container {
 	transform: skewY(-10deg);
 	background: white;
 	box-sizing: border-box;
 	margin-top: 150px;
-	padding: 100px 0 100px 0;
+	padding: 100px 0;
 
 	article {
 		transform: skewY(10deg);
@@ -146,20 +151,31 @@ a {
 				border: none;
 			}
 		}
+
 		.demo {
 			.cp_embed_wrapper {
 				margin: 10px;
 			}
 		}
+
 		.me {
 			margin-top: 100px;
 			text-align: center;
+
 			h4 {
 				font-size: 34px;
 				font-weight: 600;
 				line-height: 53px;
 				letter-spacing: -0.0275em;
 			}
+		}
+
+		.seechange {
+			padding: 20px;
+			background: #292929;
+			cursor: pointer;
+			color: white;
+			text-align: center;
 		}
 	}
 }
@@ -273,28 +289,28 @@ footer {
 		}
 	}
 }
-
-
 @keyframes scroll {
-	0%, 100% {
-		bottom: 70px
+	0%,
+	100% {
+		bottom: 70px;
 	}
 
 	50% {
-		bottom: 48px
+		bottom: 48px;
 	}
 }
-
 @media (max-width: 800px) {
 	header {
 		.logo {
 			width: 100px;
 			height: 100px;
 		}
+
 		.scroll {
 			display: none;
 		}
 	}
+
 	h1 {
 		font-size: 10vh;
 		text-align: center;
@@ -304,9 +320,55 @@ footer {
 		font-size: 5vh;
 		text-align: center;
 	}
-	.container {
-		article {
 
+	.container {
+		article {}
+	}
+}
+
+.changelog {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+
+	.exit {
+		position: fixed;
+		top: 20px;
+		left: 20px;
+		color: black;
+		cursor: pointer;
+		font-size: 40px;
+	}
+
+	.gh-log {
+		margin-top: 0;
+		overflow: auto;
+		max-width: 840px;
+		margin: 0 auto;
+		height: 100vh;
+
+		h1 {
+			text-align: center;
 		}
+	}
+}
+@keyframes changelog {
+	from {
+		transform: translate(0);
+	}
+
+	to {
+		transform: translate(-100vw);
+	}
+}
+@keyframes main {
+	from {
+		transform: translate(0);
+	}
+
+	to {
+		transform: translate(100vw);
 	}
 }

@@ -18,22 +18,7 @@ const NEXT_PATH_MATRIX = new THREE.Matrix4().multiplyMatrices(
 let root;
 let tubes = [];
 let cameraTween;
-
-window.onload = function() {
-    root = new THREERoot({
-        createCameraControls: false,
-        antialias: true, //(window.devicePixelRatio === 1),
-        fov: 80,
-        zNear: 0.001,
-        zFar: 2000,
-    });
-
-    root.renderer.setClearColor(new THREE.Color().setHSL(0, 0, 0.05));
-    root.camera.position.set(0, 0.05, 1);
-
-    createTubes();
-    beginTubesSequence();
-};
+let light;
 
 // METHODS
 
@@ -70,8 +55,6 @@ function beginTubesSequence() {
     ]);
 
     // LIGHT
-
-    let light;
 
     light = new THREE.DirectionalLight(COLORS.red, 1);
     light.position.set(1, 0, 0);
