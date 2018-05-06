@@ -1,16 +1,20 @@
 const P = new ProType();
+const glot = new Glottologist();
 
 class MainViewController extends P.ViewController {
     willShow() {
-        this.year = this.view.querySelector("span.year")
-        this.year.innerHTML = new Date().getFullYear()
-        lunarIcons.replace()
+		glot.import("lang.json").then(() => {
+			glot.render()
 
-        let span = this.view.querySelector("span.rules")
-        let parent = span.parentNode.parentNode
-        const n = parent.querySelectorAll("h2").length
-        span.innerHTML = n
+			this.year = this.view.querySelector("span.year")
+	        this.year.innerHTML = new Date().getFullYear()
+	        lunarIcons.replace()
 
+	        let span = this.view.querySelector("span.rules")
+	        let parent = span.parentNode.parentNode
+	        const n = parent.querySelectorAll("h2").length
+	        span.innerHTML = n
+		})
 		this.view.querySelector(".seechange").addEventListener("click", e => {
 			P.performTransition("changelog", {
 				animation: "changelog"
