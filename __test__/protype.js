@@ -21,11 +21,11 @@ class ProType {
 			init() {
 				
 			}
-			setState(data, handler) {
+			setState(data) {
 				if (JSON.stringify(data) != JSON.stringify(this.state)) {
 					this.state = data
 			
-					handler(this.state)
+					this.changeHandler(this.state)
 				}
 			}
 		}
@@ -146,7 +146,7 @@ class ProType {
 	    controller.willShow()
 	
 	    if (opt.Group !== false) {
-	        function after() {
+	        const after = () => {
 	            view.style.display = "block"
 	            view.style["z-index"] = "0"
 	            senderView.style.display = "none"
@@ -163,7 +163,7 @@ class ProType {
 	    } else {
 	        view.style.display = "block"
 	
-	        function after() {
+	        const after = () => {
 	            view.style["z-index"] = "0"
 	            senderView.style.display = "none"
 	            senderController.willDisappear()

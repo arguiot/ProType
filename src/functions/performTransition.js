@@ -30,7 +30,7 @@ performTransition(to, options) {
     controller.willShow()
 
     if (opt.Group !== false) {
-        function after() {
+        const after = () => {
             view.style.display = "block"
             view.style["z-index"] = "0"
             senderView.style.display = "none"
@@ -47,7 +47,7 @@ performTransition(to, options) {
     } else {
         view.style.display = "block"
 
-        function after() {
+        const after = () => {
             view.style["z-index"] = "0"
             senderView.style.display = "none"
             senderController.willDisappear()
