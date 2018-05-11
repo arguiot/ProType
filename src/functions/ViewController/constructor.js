@@ -4,4 +4,6 @@ constructor(el, viewsName, views) {
 	this.viewsName = viewsName
 	const index = this.views.indexOf(this.view)
 	this.viewName = this.viewsName[index]
+
+	this.pipeline = {}
 }
