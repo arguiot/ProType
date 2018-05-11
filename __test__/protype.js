@@ -6,6 +6,20 @@
 
 ******************************************************/
 class ProType {
+	get Component() {
+		class component {
+			constructor(el) {
+				this.component = el;
+				this.state = {}
+			
+				this.render()
+			}
+			render() {
+				this.component.innerHTML = ""
+			}
+		}
+		return component
+	}
 	get Group() {
 		class group {
 			changeHandler(e) {
@@ -20,6 +34,10 @@ class ProType {
 			}
 			init() {
 				
+			}
+			mountComponent(el, obj) {
+				const object = new obj(el)
+				return object
 			}
 			setState(data) {
 				if (JSON.stringify(data) != JSON.stringify(this.state)) {
@@ -64,10 +82,15 @@ class ProType {
 				this.viewsName = viewsName
 				const index = this.views.indexOf(this.view)
 				this.viewName = this.viewsName[index]
+			
+				this.pipeline = {}
 			}
 			mountGroup(el, ObjectClass) {
 				const obj = new ObjectClass(el, el.getAttribute("protype-group"), this.viewName)
 				return obj;
+			}
+			onPipelineChange(pipeline) {
+				// Handle the event
 			}
 			willDisappear(sender = "Main") {
 				// perform UI changes
@@ -179,6 +202,17 @@ class ProType {
 	
 	    }
 	
+	}
+	get pipeline() {
+		const viewName = this.currentView;
+		const index = this.viewsName.indexOf(viewName)
+		const view = this.views[index]
+		return view.pipeline;
+	}
+	setPipeline(data) {
+		const viewName = this.currentView;
+		const index = this.viewsName.indexOf(viewName)
+		this.views[index].pipeline = data
 	}
 	set(name) {
 		this.currentView = name;

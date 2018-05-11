@@ -1,0 +1,3 @@
+render() {
+	this.component.innerHTML = ""
+}
