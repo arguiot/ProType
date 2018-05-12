@@ -1,6 +1,5 @@
-constructor(el, groupName, viewName) {
+constructor(el, viewName) {
 	this.group = el
-	this.groupName = groupName
 	this.viewName = viewName
 	this.state = {}
 	this.init()

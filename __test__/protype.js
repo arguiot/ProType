@@ -25,9 +25,8 @@ class ProType {
 			changeHandler(e) {
 			
 			}
-			constructor(el, groupName, viewName) {
+			constructor(el, viewName) {
 				this.group = el
-				this.groupName = groupName
 				this.viewName = viewName
 				this.state = {}
 				this.init()
@@ -86,7 +85,7 @@ class ProType {
 				this.pipeline = {}
 			}
 			mountGroup(el, ObjectClass) {
-				const obj = new ObjectClass(el, el.getAttribute("protype-group"), this.viewName)
+				const obj = new ObjectClass(el, this.viewName)
 				return obj;
 			}
 			onPipelineChange(pipeline) {
