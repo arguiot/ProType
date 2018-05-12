@@ -125,7 +125,7 @@ class ProType {
 		}
 	}
 	constructor() {
-		this.version = "v0.0.12" // ProType version
+		this.version = "v0.1.0" // ProType version
 	
 		this.views = []
 		this.viewsName = []
