@@ -7,5 +7,9 @@ get pipeline() {
 setPipeline(data) {
 	const viewName = this.currentView;
 	const index = this.viewsName.indexOf(viewName)
-	this.views[index].pipeline = data
+	const old = this.views[index].pipeline
+	if (JSON.stringify(old) != JSON.stringify(data)) {
+		this.views[index].pipeline = data
+		this.views[index].onPipelineChange(data)
+	}
 }
