@@ -126,6 +126,8 @@ class ProType {
 		this.controllers = []
 	
 		this.currentView = "";
+	
+		this.workspace = {} // share data between views
 	}
 	mount() {
 		const args = [...arguments]

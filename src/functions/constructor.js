@@ -7,4 +7,6 @@ constructor() {
 	this.controllers = []
 
 	this.currentView = "";
+
+	this.workspace = {} // share data between views
 }
