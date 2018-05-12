@@ -125,7 +125,7 @@ class ProType {
 		}
 	}
 	constructor() {
-		this.version = "v0.1.0" // ProType version
+		this.version = "v0.1.1" // ProType version
 	
 		this.views = []
 		this.viewsName = []
@@ -185,7 +185,7 @@ class ProType {
 	            senderController.willDisappear()
 	        }
 	        if (opt.animation !== "none") {
-	            opt.Group.group.style.animation = `${opt.animation} ${opt.duration} forwards`;
+	            opt.Group.style.animation = `${opt.animation} ${opt.duration} forwards`;
 	
 	            opt.Group.addEventListener("animationend", e => after())
 	        } else {

@@ -37,7 +37,7 @@ performTransition(to, options) {
             senderController.willDisappear()
         }
         if (opt.animation !== "none") {
-            opt.Group.group.style.animation = `${opt.animation} ${opt.duration} forwards`;
+            opt.Group.style.animation = `${opt.animation} ${opt.duration} forwards`;
 
             opt.Group.addEventListener("animationend", e => after())
         } else {
