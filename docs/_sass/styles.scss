@@ -177,6 +177,36 @@ a {
 			color: white;
 			text-align: center;
 		}
+		.video {
+			cursor: pointer;
+			&:hover {
+				color: #0366d6;
+			}
+		}
+	}
+}
+.yt-video {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	.exit {
+		position: fixed;
+		top: 20px;
+		left: 20px;
+		color: black;
+		cursor: pointer;
+		font-size: 40px;
+		color: white;
+	}
+	iframe {
+		width: 80vw;
+		height: 80vh;
 	}
 }
 /* TERMINAL - Installation */

@@ -1,6 +1,31 @@
 const P = new ProType();
 const glot = new Glottologist();
 
+class Video extends P.Group {
+	init() {
+		this.state = {
+			video: false
+		}
+		document.querySelector(".video").addEventListener("click", e => {
+			this.setState({
+				video: !this.state.video
+			})
+		})
+		this.group.addEventListener("click", e => {
+			this.setState({
+				video: !this.state.video
+			})
+		})
+	}
+	changeHandler() {
+		let display = "none"
+		if (this.state.video) {
+			display = "flex"
+		}
+		this.group.style.display = display
+	}
+}
+
 class MainViewController extends P.ViewController {
     willShow() {
 		glot.import("lang.json").then(() => {
@@ -15,6 +40,10 @@ class MainViewController extends P.ViewController {
 	        const n = parent.querySelectorAll("h2").length
 	        span.innerHTML = n
 		})
+		this.mountGroup(
+			this.view.querySelector(".yt-video"),
+			Video
+		)
 		this.view.querySelector(".seechange").addEventListener("click", e => {
 			P.performTransition("changelog", {
 				animation: "changelog"

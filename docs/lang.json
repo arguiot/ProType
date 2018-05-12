@@ -3,6 +3,10 @@
         "en": "The next generation JavaScript framework.",
         "fr": "Le framework JavaScript de prochaine génération."
     },
+	"video": {
+		"en": "<i data-icon=\"youtube\"></i> Watch the video",
+		"fr": "<i data-icon=\"youtube\"></i> Regarder la vidéo"
+	},
     "what": {
         "en": "What is ProType?",
         "fr": "Qu'est-ce que ProType?"
