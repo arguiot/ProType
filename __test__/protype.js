@@ -83,6 +83,8 @@ class ProType {
 				this.viewName = this.viewsName[index]
 			
 				this.pipeline = {}
+			
+				this.preload()
 			}
 			mountGroup(el, ObjectClass) {
 				const obj = new ObjectClass(el, this.viewName)
@@ -98,6 +100,9 @@ class ProType {
 			}
 			onPipelineChange(pipeline) {
 				// Handle the event
+			}
+			preload() {
+				// Do stuff that doesn't require DOM interaction
 			}
 			willDisappear(sender = "Main") {
 				// perform UI changes

@@ -6,4 +6,6 @@ constructor(el, viewsName, views) {
 	this.viewName = this.viewsName[index]
 
 	this.pipeline = {}
+
+	this.preload()
 }
