@@ -20,6 +20,10 @@ class ProType {
 		}
 		return component
 	}
+	mountExternalGroup(el, group) {
+		const g = new group(el, null)
+		return g
+	}
 	get Group() {
 		class group {
 			changeHandler(e) {
