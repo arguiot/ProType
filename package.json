@@ -1,6 +1,6 @@
 {
   "name": "protype.js",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "A new kind of object oriented front-end JS framework",
   "main": "dist/protype.min.js",
   "scripts": {
@@ -33,6 +33,7 @@
   "devDependencies": {
     "babel-eslint": "^8.2.3",
     "babel-helper-flip-expressions": "^0.4.0",
+    "babel-minify": "^0.4.3",
     "babel-plugin-minify-builtins": "^0.4.0",
     "babel-plugin-minify-constant-folding": "^0.4.0",
     "babel-plugin-minify-dead-code-elimination": "^0.4.0",
