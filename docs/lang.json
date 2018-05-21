@@ -9,23 +9,23 @@
 	},
     "what": {
         "en": "What is ProType?",
-        "fr": "Qu'est-ce que ProType?"
+        "fr": "Qu’est-ce que ProType ?"
     },
     "what-content": {
         "en": "ProType is JavaScript front end (browser) framework. It is object oriented only and help you separate tasks and views while staying productive.",
-        "fr": "ProType est un framework JavaScript pour le front end (navigateur). Il est Orienté Objet, c'est à dire qu'il vous aideras à séparer correctement les tâches en restant productif"
+        "fr": "ProType est un framework JavaScript pour le front end (navigateur). Il est orienté objet, c’est-à-dire qu’il vous aidera à séparer correctement les tâches en restant productif."
     },
     "why": {
         "en": "Why ProType?",
-        "fr": "Pourquoi ProType?"
+        "fr": "Pourquoi ProType ?"
     },
     "why-content": {
         "en": "Because I couldn't find a framework that could use classes in the most effective way. I wanted something that could resemble other language, such as Swift (and Cocoa) or Dart (with Flutter). ProType will help you build big UIs, such as web apps or apps with other frameworks like Cordova or Electron. <br> <br> <i>P.S. The word ProType comes from Prototype, a property used in JavaScript to add elements to a class</i>",
-        "fr": "Car je ne pouvais pas trouver un framework qui pouvais utiliser les classes de la meilleur facon. Je voulais quelque chose qui pouvais ressembler aux autres language comme Swift (avec Cocoa) ou Dart (avec Flutter). ProType vous aideras à créer de grosses UIs (interface utilisateur) comme des web apps ou des app avec d'autres frameworks comme Cordova ou Electron <br> <br> <i>P.S. Le nom ProType vient de la contraption de Prototype, un mot utilisé en JavaScript pour ajouter des éléments à une classe.</i>"
+        "fr": "Car je ne pouvais pas trouver un framework qui pouvait utiliser les classes de la meilleur façon. Je voulais quelque chose qui pouvait ressembler aux autres languages comme Swift (avec Cocoa) ou Dart (avec Flutter). ProType vous aidera à créer de grosses UIs (interfaces utilisateur) comme des web apps ou des app avec d’autres frameworks comme Cordova ou Electron <br> <br> <i>P.S. Le nom ProType vient de la contraction de Prototype, un mot utilisé en JavaScript pour ajouter des éléments à une classe.</i>"
     },
     "how": {
         "en": "How it works?",
-        "fr": "Comment ça marche?"
+        "fr": "Comment ça marche ?"
     },
     "rules": {
         "en": "ProType follows a set of <span class=\"rules\"></span> rules:",
@@ -33,19 +33,19 @@
     },
     "oop": {
         "en": "Object Oriented",
-        "fr": "Orienté Objet"
+        "fr": "Orienté objet"
     },
     "oop-content": {
         "en": "ProType is a Object Oriented based framework, which means that everything is defined in terms of <code>class</code>.",
-        "fr": "ProType est un framework Orienté Objet, ce qui veut dire que tout est définie par des <code>class</code>."
+        "fr": "ProType est un framework orienté objet, ce qui veut dire que tout est défini par des <code>class</code>."
     },
     "modern": {
         "en": "Modern",
         "fr": "Moderne"
     },
     "modern-content": {
-        "en": "The code that is written with ProType is meant to be wrote in the latest version of EcmaScript (JavaScript). I use the latest technologie when developping ProType, and I encourage you to do the same. But that doesn't mean your website won't work with older browsers, our friends at <a href=\"https: //babeljs.io\">Babel</a> will help us implementing ProType and your code for every browsers using their tools.",
-        "fr": "Le code qui écrit avec ProType doit être écrit avec la dernière version d'EcmaScript (JavaScript). J'utilise les dernières technologies quand je dévelope ProType, et je vous encourage à faire de même. Mais cela ne veux pas dire que votre skte web ne fonctionneras pas avecles navigateurs anciens. Nos amis de chez <a href=\"https: //babeljs.io\">Babel</a> nous aiderons à implementer ProType ainsi que votre code pour tout les navigateurs avec leur produit."
+        "en": "The code that is written with ProType is meant to be wrote in the latest version of ECMAScript (JavaScript). I use the latest technologie when developping ProType, and I encourage you to do the same. But that doesn't mean your website won't work with older browsers, our friends at <a href=\"https://babeljs.io\">Babel</a> will help us implementing ProType and your code for every browsers using their tools.",
+        "fr": "Le code qui est écrit avec ProType doit être écrit avec la dernière version d’ECMAScript (JavaScript). J’utilise les dernières technologies quand je développe ProType, et je vous encourage à faire de même. Mais cela ne veux pas dire que votre site web ne fonctionnera pas avec les navigateurs anciens. Nos amis de chez <a href=\"https://babeljs.io\">Babel</a> nous aideront à implémenter ProType ainsi que votre code pour tout les navigateurs avec leur produit."
     },
     "prod": {
         "en": "Productive",
@@ -53,7 +53,7 @@
     },
     "prod-content": {
         "en": "ProType code might seems a little bit longer to write for very small projects, but it was designed to fit very large projects. And you will be much more productive using ProType for large projects than other JavaScript frameworks such as DisplayJS, jQuery or even Vue.",
-        "fr": "Le code écrit avec ProType peut sembler un peu plus long à écrire pour les petits projets, néanmoins il a été pensé pour les gros projets. Et vous serez on ne peut plus productif avec ProType qu'avec les autres framework JavaScript comme DisplayJS, jQuery or même Vue."
+        "fr": "Le code écrit avec ProType peut sembler un peu plus long à écrire pour les petits projets, néanmoins il a été pensé pour les gros projets. Et vous serez on ne peut plus productif avec ProType qu’avec les autres framework JavaScript comme DisplayJS, jQuery ou même Vue."
     },
     "react": {
         "en": "Reactive",
@@ -61,15 +61,15 @@
     },
     "react-content": {
         "en": "ProType will react to user interaction or events based on your code. This will help you show to your users what they want in milliseconds.",
-        "fr": "ProType réagiras aux interectiosn de vos utilisateurs ou aux évenements dans votre code. Cela vous aideras à montrer aux utilisateurs ce qu'ils veulent en quelques millisecondes"
+        "fr": "ProType réagira aux interections de vos utilisateurs ou aux évenements dans votre code. Cela vous aidera à montrer aux utilisateurs ce qu’ils veulent en quelques millisecondes"
     },
     "safe": {
         "en": "Safe",
-        "fr": "Sûre"
+        "fr": "Sûr"
     },
     "safe-content": {
         "en": "ProType is safe and non-destructive. You can use other framework, library or piece of code in addition to ProType without breaking anything.",
-        "fr": "ProType est sûre et non destructif. Vous pouvez utiliser d'autres framework, library ou bouts de code avec ProType sans tout casser."
+        "fr": "ProType est sûr et non destructif. Vous pouvez utiliser d’autres frameworks, bibliothèques ou bouts de code avec ProType sans tout casser."
     },
     "fast": {
         "en": "Fast",
@@ -93,6 +93,6 @@
     },
     "patreon": {
         "en": "I created my Patreon page not that long ago, check it out:",
-        "fr": "J'ai créer ma page Patreon il n'y a pas si longtemps, venez y faire un tour:"
+        "fr": "J’ai créé ma page Patreon il n’y a pas si longtemps, venez y faire un tour :"
     }
 }
