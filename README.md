@@ -11,7 +11,7 @@
 </div>
 
 ## The docs can be found [here](https://github.com/arguiot/ProType/wiki)
-
+If you need help, you can go to the docs, and get your answers. Or you can submit an issue, and I'll try to answer you as fast as possible.
 ## Support
 ProType is a project that required a lot of work and effort. You can show your appreciation by leaving a ⭐️. But you can also contribute in a 'financial' way by giving to my [Patreon](https://www.patreon.com/bePatron?u=10987869)
 ## Contributing
