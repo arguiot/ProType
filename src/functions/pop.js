@@ -1,6 +1,6 @@
 pop() {
-	P.performTransition(this.last)
+	this.performTransition(this.last)
 }
 popToRoot() {
-	P.performTransition(this.root)
+	this.performTransition(this.root)
 }
