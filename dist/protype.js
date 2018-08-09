@@ -264,7 +264,7 @@ var ProType = (function() {
   function ProType() {
     _classCallCheck(this, ProType);
 
-    this.version = "v0.1.1"; // ProType version
+    this.version = "v1.0.0"; // ProType version
 
     this.views = [];
     this.viewsName = [];
@@ -272,6 +272,8 @@ var ProType = (function() {
     this.controllers = [];
 
     this.currentView = "";
+    this.last = "";
+    this.root = "";
 
     this.workspace = {}; // share data between views
   }
@@ -295,6 +297,9 @@ var ProType = (function() {
     {
       key: "performTransition",
       value: function performTransition(to, options) {
+        if (to == this.currentView) {
+          return;
+        }
         var opt = Object.assign(
           {
             animation: "none",
@@ -321,19 +326,20 @@ var ProType = (function() {
         controller.view = view;
         controller.views = this.views;
 
+        this.last = this.currentView;
         this.currentView = to;
 
         view.setAttribute("style", "");
         view.style["z-index"] = "-10";
 
-        controller.willShow();
+        controller.willShow(sender);
 
         if (opt.Group !== false) {
           var after = function after() {
             view.style.display = "block";
             view.style["z-index"] = "0";
             senderView.style.display = "none";
-            senderController.willDisappear();
+            senderController.willDisappear(sender);
           };
           if (opt.animation !== "none") {
             opt.Group.style.animation =
@@ -351,7 +357,7 @@ var ProType = (function() {
           var _after = function _after() {
             view.style["z-index"] = "0";
             senderView.style.display = "none";
-            senderController.willDisappear();
+            senderController.willDisappear(sender);
             view.style.display = "block";
           };
           if (opt.animation !== "none") {
@@ -380,10 +386,23 @@ var ProType = (function() {
       }
     },
     {
+      key: "pop",
+      value: function pop() {
+        this.performTransition(this.last);
+      }
+    },
+    {
+      key: "popToRoot",
+      value: function popToRoot() {
+        this.performTransition(this.root);
+      }
+    },
+    {
       key: "set",
       value: function set(name) {
         var _this = this;
 
+        this.root = name;
         this.currentView = name;
         document.addEventListener("DOMContentLoaded", function(e) {
           for (var i = 0; i < _this.views.length; i++) {

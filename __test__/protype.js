@@ -134,7 +134,7 @@ class ProType {
 		}
 	}
 	constructor() {
-		this.version = "v0.1.1" // ProType version
+		this.version = "v1.0.0" // ProType version
 	
 		this.views = []
 		this.viewsName = []
@@ -142,6 +142,8 @@ class ProType {
 		this.controllers = []
 	
 		this.currentView = "";
+		this.last = "";
+		this.root = "";
 	
 		this.workspace = {} // share data between views
 	}
@@ -156,6 +158,9 @@ class ProType {
 		}
 	}
 	performTransition(to, options) {
+		if (to == this.currentView) {
+			return
+		}
 	    const opt = Object.assign({
 	        animation: "none",
 	        duration: "1s",
@@ -179,19 +184,20 @@ class ProType {
 	    controller.view = view
 	    controller.views = this.views;
 	
+		this.last = this.currentView
 	    this.currentView = to;
 	
 	    view.setAttribute("style", "")
 	    view.style["z-index"] = "-10"
 	
-	    controller.willShow()
+	    controller.willShow(sender)
 	
 	    if (opt.Group !== false) {
 	        const after = () => {
 	            view.style.display = "block"
 	            view.style["z-index"] = "0"
 	            senderView.style.display = "none"
-	            senderController.willDisappear()
+	            senderController.willDisappear(sender)
 	        }
 	        if (opt.animation !== "none") {
 	            opt.Group.style.animation = `${opt.animation} ${opt.duration} forwards`;
@@ -207,7 +213,7 @@ class ProType {
 	        const after = () => {
 	            view.style["z-index"] = "0"
 	            senderView.style.display = "none"
-	            senderController.willDisappear()
+	            senderController.willDisappear(sender)
 	            view.style.display = "block"
 	        }
 	        if (opt.animation !== "none") {
@@ -236,7 +242,14 @@ class ProType {
 			this.views[index].onPipelineChange(data)
 		}
 	}
+	pop() {
+		this.performTransition(this.last)
+	}
+	popToRoot() {
+		this.performTransition(this.root)
+	}
 	set(name) {
+		this.root = name
 		this.currentView = name;
 		document.addEventListener("DOMContentLoaded", e => {
 			for (var i = 0; i < this.views.length; i++) {

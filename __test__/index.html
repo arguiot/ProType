@@ -31,9 +31,11 @@
 
 	<div class="controller one" protype="1">
 		<div class="text" protype-group="date"></div>
+		<button class="a">Pop</button>
 	</div>
 	<div class="controller two" protype="2">
 		<div class="text"></div>
+		<button class="b">Pop 2 root</button>
 	</div>
 	<script src="/eyejs/" charset="utf-8"></script>
 	<script src="/static/protype.js"></script>
@@ -60,6 +62,9 @@
 						animation: "test"
 					})
 				})
+				this.view.querySelector(".a").addEventListener("click", e => {
+					P.pop()
+				})
 				this.g = this.mountGroup(this.view.querySelector(".text"), DateG)
 
 			}
@@ -72,7 +77,9 @@
 						animation: "test"
 					})
 				})
-
+				this.view.querySelector(".b").addEventListener("click", e => {
+					P.popToRoot()
+				})
 				this.view.querySelector(".text").innerHTML = "Hello World!"
 			}
 		}
