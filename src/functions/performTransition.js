@@ -22,19 +22,20 @@ performTransition(to, options) {
     controller.view = view
     controller.views = this.views;
 
+	this.last = this.currentView
     this.currentView = to;
 
     view.setAttribute("style", "")
     view.style["z-index"] = "-10"
 
-    controller.willShow()
+    controller.willShow(sender)
 
     if (opt.Group !== false) {
         const after = () => {
             view.style.display = "block"
             view.style["z-index"] = "0"
             senderView.style.display = "none"
-            senderController.willDisappear()
+            senderController.willDisappear(sender)
         }
         if (opt.animation !== "none") {
             opt.Group.style.animation = `${opt.animation} ${opt.duration} forwards`;
