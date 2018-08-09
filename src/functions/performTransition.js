@@ -1,4 +1,7 @@
 performTransition(to, options) {
+	if (to == this.currentView) {
+		return
+	}
     const opt = Object.assign({
         animation: "none",
         duration: "1s",
@@ -51,7 +54,7 @@ performTransition(to, options) {
         const after = () => {
             view.style["z-index"] = "0"
             senderView.style.display = "none"
-            senderController.willDisappear()
+            senderController.willDisappear(sender)
             view.style.display = "block"
         }
         if (opt.animation !== "none") {
