@@ -230,6 +230,12 @@ var ProType = (function() {
               }
             },
             {
+              key: "prepareForSegue",
+              value: function prepareForSegue(nextVC) {
+                // Do something with nextVC
+              }
+            },
+            {
               key: "willDisappear",
               value: function willDisappear() {
                 // perform UI changes
@@ -331,6 +337,8 @@ var ProType = (function() {
 
         view.setAttribute("style", "");
         view.style["z-index"] = "-10";
+
+        senderController.prepareForSegue(controller);
 
         controller.willShow(sender);
 

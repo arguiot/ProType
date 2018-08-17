@@ -68,6 +68,9 @@
 				this.g = this.mountGroup(this.view.querySelector(".text"), DateG)
 
 			}
+			prepareForSegue(next) {
+				next.str = "Test"
+			}
 		}
 
 		class ControllerTwo extends P.ViewController {
@@ -80,7 +83,7 @@
 				this.view.querySelector(".b").addEventListener("click", e => {
 					P.popToRoot()
 				})
-				this.view.querySelector(".text").innerHTML = "Hello World!"
+				this.view.querySelector(".text").innerHTML = `Hello World! ${this.str}`
 			}
 		}
 		P.autoMount(ControllerOne, ControllerTwo)

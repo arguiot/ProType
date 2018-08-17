@@ -20,7 +20,7 @@ performTransition(to, options) {
     this.views[index] = viewBis
 
     const view = this.views[index]
-    const controller = this.controllers[index]
+    let controller = this.controllers[index]
 
     controller.view = view
     controller.views = this.views;
@@ -30,6 +30,8 @@ performTransition(to, options) {
 
     view.setAttribute("style", "")
     view.style["z-index"] = "-10"
+
+	senderController.prepareForSegue(controller)
 
     controller.willShow(sender)
 
