@@ -270,7 +270,7 @@ var ProType = (function() {
   function ProType() {
     _classCallCheck(this, ProType);
 
-    this.version = "v1.0.0"; // ProType version
+    this.version = "v1.1.0"; // ProType version
 
     this.views = [];
     this.viewsName = [];
