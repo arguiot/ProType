@@ -52,8 +52,29 @@ class ProType {
 		}
 		return group
 	}
-	Router(handler) {
-	
+	Router() {
+	    const args = [...arguments]
+	    let handler;
+	    let pattern = ""
+	    switch (args.length) {
+	        case 1:
+	            handler = args[0]
+	            break;
+	    
+	        default:
+	            pattern = args[0]
+	            handler = args[1]
+	            break;
+	    }
+	    const regex = new RegExp(/^:\w*$/)
+	    const routes = {}
+	    pattern.split("/").forEach((el, i) => {
+	        if (el.match(regex)) {
+	            routes[i] = el.split(":")[1]
+	        }
+	    })
+	    const rep = new RegExp(/\/:\w*(\/|$)/gi)
+	    const match = new RegExp(pattern.replace("/\\w*/"))
 	    document.addEventListener("DOMContentLoaded", e => {
 	        let data = {};
 	
@@ -74,7 +95,14 @@ class ProType {
 	        data.search = searchObj
 			data.pathValue = path.split("/")
 	
-	        handler(data)
+	        if (path.match(match) && pattern != "") {
+	            const components = path.split("/")
+	            let r = {}
+	            Object.keys(routes).forEach(i => {
+	                r[routes[i]] = components[i]
+	            })
+	            handler(data, r)
+	        }
 	    })
 	}
 	get ViewController() {

@@ -52,7 +52,29 @@ var ProType = (function() {
     },
     {
       key: "Router",
-      value: function Router(handler) {
+      value: function Router() {
+        var args = [].concat(Array.prototype.slice.call(arguments));
+        var handler = void 0;
+        var pattern = "";
+        switch (args.length) {
+          case 1:
+            handler = args[0];
+            break;
+
+          default:
+            pattern = args[0];
+            handler = args[1];
+            break;
+        }
+        var regex = new RegExp(/^:\w*$/);
+        var routes = {};
+        pattern.split("/").forEach(function(el, i) {
+          if (el.match(regex)) {
+            routes[i] = el.split(":")[1];
+          }
+        });
+        var rep = new RegExp(/\/:\w*(\/|$)/gi);
+        var match = new RegExp(pattern.replace("/\\w*/"));
         document.addEventListener("DOMContentLoaded", function(e) {
           var data = {};
 
@@ -75,7 +97,14 @@ var ProType = (function() {
           data.search = searchObj;
           data.pathValue = path.split("/");
 
-          handler(data);
+          if (path.match(match) && pattern != "") {
+            var components = path.split("/");
+            var r = {};
+            Object.keys(routes).forEach(function(i) {
+              r[routes[i]] = components[i];
+            });
+            handler(data, r);
+          }
         });
       }
     },
