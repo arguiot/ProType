@@ -10,7 +10,7 @@
     "gulp": "gulp",
     "prettier": "prettier \"dist/**/*.js\" --write",
     "lint": "./node_modules/.bin/eslint \"dist/**/*\" --fix",
-    "eye": "./node_modules/.bin/eye"
+    "eye": "./node_modules/.bin/eye __test__/test.js -ci"
   },
   "repository": {
     "type": "git",
