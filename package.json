@@ -59,7 +59,7 @@
     "babili": "^0.1.4",
     "buffer-shims": "^1.0.0",
     "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.11.0",
     "eye.js": "1.2.1",
     "gulp": "^4.0.0",
