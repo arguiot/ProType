@@ -69,6 +69,6 @@
     "gulp-rename": "^1.2.2",
     "gulp-rigger": "^0.5.8",
     "gulp-uglify": "^3.0.0",
-    "prettier": "1.17.0"
+    "prettier": "1.18.2"
   }
 }
