@@ -58,7 +58,7 @@
     "babel-preset-env": "^1.6.1",
     "babili": "^0.1.4",
     "buffer-shims": "^1.0.0",
-    "eslint": "^6.5.1",
+    "eslint": "^7.14.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.11.0",
     "eye.js": "1.2.1",
